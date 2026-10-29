@@ -30,7 +30,16 @@ Develop locally in PyCharm; run only the GPU-heavy work on Colab (or Kaggle as f
 ### Caveats
 - Free Colab gives no guaranteed GPU and may cut sessions after a few hours: save a checkpoint every epoch. Kaggle (~30 GPU hrs/week) works the same way as a fallback.
 - Fine-tuning XLM-R-base on a Mac CPU/MPS would take many hours per run; use Colab for real runs. MPS is fine only for small experiments.
-- Mac chip type not yet confirmed; it decides whether local perplexity/embedding runs are practical.
+- Mac chip is Apple M4 Max, so local feature, perplexity and embedding runs should be practical.
+
+### Installation steps
+Run in PyCharm's Terminal tab or any terminal of your own (not through Claude, whose sandbox proxy blocks PyPI):
+```
+cd /Users/pankaj/PycharmProjects/translation_confidence_scoring
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+The `.venv` uses Python 3.11. The install is large (torch), so it may take several minutes.
 
 ### Folder structure
 ```
