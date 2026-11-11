@@ -1,3 +1,6 @@
 seed: 42
 data_dir: data
 max_len: 128
+test_size: 0.10   # fixed test split, grouped by source sentence
+target: z_mean    # regression target (annotator-bias-corrected)
+display_score: mean   # raw 0-100 average, used only for display

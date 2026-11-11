@@ -7,6 +7,8 @@ Time budget: 2 hrs on weekdays, 3 hrs each on Sat and Sun (6 hrs per weekend) â‰
 ---
 
 ## Special Instructions
+### Datasource - https://github.com/WMT-QE-Task/wmt-qe-2023-data/tree/main/test_data_2023
+https://github.com/WMT-QE-Task/wmt-qe-2023-data/tree/main/task_2/train
 
 ### Where to run: PyCharm (local) + Google Colab (GPU only)
 Develop locally in PyCharm; run only the GPU-heavy work on Colab (or Kaggle as fallback).

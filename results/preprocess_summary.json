@@ -1,0 +1,13 @@
+{
+  "rows_raw": 8000,
+  "rows_raw_train": 7000,
+  "rows_raw_dev": 1000,
+  "rows_empty_removed": 0,
+  "rows_duplicates_removed": 1011,
+  "rows_clean": 6989,
+  "unique_sources": 6989,
+  "rows_trainval": 6290,
+  "rows_test": 699,
+  "seed": 42,
+  "test_size": 0.1
+}
