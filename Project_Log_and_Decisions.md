@@ -55,15 +55,35 @@ Companion file: `Project_Plan_and_Milestones.md` (plan and schedule).
 
 ## 7. Open Decisions (not final yet)
 - **Target: CONFIRMED.** `z_mean` is the main regression target (bias-corrected); `mean` is used for the 0–100 display. Set in `config.yaml` (`target`, `display_score`).
-- **"Fail" label:** proposed percentile cutoff on the training set only (10% / 15% / 20% as a sensitivity check; 15% as main). Estimated raw mean cutoff for 15% is about 73–74 (not yet computed).
+- **"Fail" label:** percentile cutoff on the train split only (10% / 15% / 20% as a sensitivity check; 15% as main). Computed by `src/fail_cutoffs.py` after a source-grouped train/val split of `trainval.csv` (val 15%, seed 42: 5,346 train / 944 val). Results in `results/fail_cutoffs.json`:
+  - 10%: `z_mean` < −0.822 (raw mean < 71.5); 535 train / 98 val fails.
+  - **15% (main):** `z_mean` < −0.581 (raw mean < 74.25); 802 train / 157 val fails (val rate 16.6%).
+  - 20%: `z_mean` < −0.420 (raw mean < 76.25); 1,069 train / 204 val fails.
+  - Same numeric cutoff is applied to val and test, never recomputed there. Files `train.csv` / `val.csv` saved in `data/processed/`.
   - Reason for percentile: failures are rare (about 8% below raw 70), which would leave too few positives for stable precision/recall.
   - Trade-off: wider cutoff includes mediocre translations in the "fail" class.
 - Scores are not modified; the cutoff only affects the classification labels.
 
-## 8. Next Steps
-- Exploratory analysis: score distributions, lengths, annotator disagreement.
-- Compute fail-cutoff values on the training portion and confirm the target.
-- Feature engineering (Day 5 onward), then baselines, then XLM-R on Colab.
+## 8. Basic Features (script: `src/features_basic.py`)
+- 36 features per row, saved to `features/basic_{train,val,test}.csv` (same row order as `data/processed/{train,val,test}.csv`). Deterministic, nothing fitted, so the same code runs on all splits.
+- Groups: length (chars, words, ratios, differences, average word length); punctuation (counts, differences, terminal punctuation, commas, quotes, brackets); script mix of the translation (Devanagari/Latin fraction, Latin words); cross-lingual overlap (tokens shared unchanged, copied Latin words); fluency proxies (type-token ratio, repeated tokens and bigrams).
+- Tokenization: whitespace split with edge punctuation stripped (a `\w` regex would split Hindi words at vowel signs).
+- Number and named-entity consistency are left for Day 6 (only raw digit counts here).
+- Spearman with `z_mean` on train: all weak (|rho| ≤ 0.26). Strongest negatives: punctuation count (−0.26), source length (−0.24), Latin words in the translation (−0.21). Strongest positives: Devanagari fraction (+0.23), type-token ratio (+0.17). Length ratio is nearly useless (+0.04).
+- Caveat: repeated-token counts partly track length (function words repeat in long sentences).
+
+## 9. Number and Named-Entity Features (script: `src/features_ne.py`)
+- 22 features, saved to `features/ne_{train,val,test}.csv` (same row order as the processed CSVs).
+- **Numbers:** extracted from source and translation, Devanagari digits mapped to ASCII, thousands commas dropped (1,000 = 1000), ordinals (2nd, 21st) ignored because Hindi writes them as words. Compared as multisets: matched / missing / extra counts, match fraction, `all_numbers_match`.
+- **Named entities (heuristic):** no NER library installed, so source entities = capitalised words that are not sentence-initial, plus all-caps acronyms; spans break at punctuation. Hindi output transliterates names into Devanagari, so exact matching only detects entities copied in Latin script. The rest are counted (`entities_not_copied`) but cannot be verified; treat these as complexity proxies, not true consistency checks.
+- Other features: Latin spans in the translation, spans with no source counterpart, URLs lost.
+- Dropped two constant features: Devanagari digits in the translation (always 0, translations use ASCII digits) and URLs kept.
+- Findings on train: 16.5% of rows contain numbers; in 90% of those all numbers match. The 87 rows with a number mismatch average `z_mean` −0.45 versus −0.09 for matching rows, so this is a real but rare failure signal. Spearman correlations are weak (|rho| ≤ 0.20); the strongest is Latin spans in the translation (−0.20). URLs appear in only 4 train rows, so that feature is nearly empty.
+
+## 10. Next Steps
+- Perplexity (Day 7) and LaBSE similarity (Day 8), cached to `features/`.
+- Write the XLM-R script early and launch on Colab.
+- Baselines (Linear, RF, XGBoost) on the cached features.
 
 ---
 
@@ -73,3 +93,6 @@ Companion file: `Project_Plan_and_Milestones.md` (plan and schedule).
 | 28 Oct | Environment, Colab check, data located |
 | 29–30 Oct | Label columns analysed; raw data checked; split strategy decided |
 | 30 Oct | `src/preprocess.py` run; processed files created |
+| 10 Nov | Day 4: target confirmed (`z_mean`, `mean` for display); EDA run (`src/eda.py`); fail cutoffs computed on train split (`src/fail_cutoffs.py`), `train.csv` / `val.csv` created |
+| 10 Nov | Day 5: length, punctuation, script and overlap features (`src/features_basic.py`, 36 features) |
+| 10 Nov | Day 6: number and named-entity features (`src/features_ne.py`, 22 features) |

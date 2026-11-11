@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "val_size": 0.15,
+  "rows_train": 5346,
+  "rows_val": 944,
+  "target": "z_mean",
+  "display_score": "mean",
+  "main_percentile": 15,
+  "cutoffs": {
+    "10": {
+      "z_mean_cutoff": -0.8219294437484671,
+      "mean_cutoff": 71.5,
+      "fail_rate_train": 0.10007482229704452,
+      "fail_rate_val": 0.1038135593220339,
+      "n_fail_train": 535,
+      "n_fail_val": 98
+    },
+    "15": {
+      "z_mean_cutoff": -0.5809474498446642,
+      "mean_cutoff": 74.25,
+      "fail_rate_train": 0.15001870557426114,
+      "fail_rate_val": 0.1663135593220339,
+      "n_fail_train": 802,
+      "n_fail_val": 157
+    },
+    "20": {
+      "z_mean_cutoff": -0.4200333678393558,
+      "mean_cutoff": 76.25,
+      "fail_rate_train": 0.19996258885147775,
+      "fail_rate_val": 0.21610169491525424,
+      "n_fail_train": 1069,
+      "n_fail_val": 204
+    }
+  }
+}
