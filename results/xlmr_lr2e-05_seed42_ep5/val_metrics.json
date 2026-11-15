@@ -1,0 +1,31 @@
+{
+  "file": "results/xlmr_lr2e-05_seed42_ep5/val_predictions.csv",
+  "n": 944,
+  "fail_cutoff": -0.5809474498446642,
+  "regression": {
+    "pearson": 0.4999736202396726,
+    "spearman": 0.48901118166430924,
+    "rmse": 0.6844057028818125,
+    "mae": 0.47616963226404824
+  },
+  "fail_at_label_cutoff": {
+    "threshold": -0.5809474498446642,
+    "fail_rate_true": 0.1663135593220339,
+    "flagged_rate": 0.05402542372881356,
+    "precision": 0.5490196078431373,
+    "recall": 0.17834394904458598,
+    "f1": 0.2692307692307692,
+    "roc_auc": 0.7524947595885367,
+    "pr_auc": 0.4382471521388391
+  },
+  "fail_at_best_f1_threshold": {
+    "threshold": -0.002363205,
+    "fail_rate_true": 0.1663135593220339,
+    "flagged_rate": 0.25,
+    "precision": 0.3771186440677966,
+    "recall": 0.5668789808917197,
+    "f1": 0.4529262086513995,
+    "roc_auc": 0.7524947595885367,
+    "pr_auc": 0.4382471521388391
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "model": "xgboost (depth5), all features, refit on train",
+  "shap_computed_on": "validation (944 rows)",
+  "top10": [
+    {
+      "feature": "mt_nll",
+      "mean_abs_shap": 0.0812000036239624,
+      "share_of_total": 0.1120000034570694,
+      "direction_corr": -0.9686
+    },
+    {
+      "feature": "labse_cos",
+      "mean_abs_shap": 0.07800000160932541,
+      "share_of_total": 0.10769999772310257,
+      "direction_corr": 0.9509
+    },
+    {
+      "feature": "mt_devanagari_frac",
+      "mean_abs_shap": 0.050700001418590546,
+      "share_of_total": 0.07000000029802322,
+      "direction_corr": 0.9547
+    },
+    {
+      "feature": "mt_chars",
+      "mean_abs_shap": 0.045499999076128006,
+      "share_of_total": 0.06279999762773514,
+      "direction_corr": -0.8087
+    },
+    {
+      "feature": "src_punct",
+      "mean_abs_shap": 0.040699999779462814,
+      "share_of_total": 0.05620000138878822,
+      "direction_corr": -0.8573
+    },
+    {
+      "feature": "char_ratio",
+      "mean_abs_shap": 0.040699999779462814,
+      "share_of_total": 0.05609999969601631,
+      "direction_corr": -0.1915
+    },
+    {
+      "feature": "mt_latin_word_frac",
+      "mean_abs_shap": 0.03189999982714653,
+      "share_of_total": 0.04399999976158142,
+      "direction_corr": -0.5219
+    },
+    {
+      "feature": "word_diff",
+      "mean_abs_shap": 0.0284000001847744,
+      "share_of_total": 0.03920000046491623,
+      "direction_corr": 0.7914
+    },
+    {
+      "feature": "word_ratio",
+      "mean_abs_shap": 0.02800000086426735,
+      "share_of_total": 0.03869999945163727,
+      "direction_corr": -0.4775
+    },
+    {
+      "feature": "src_chars",
+      "mean_abs_shap": 0.023800000548362732,
+      "share_of_total": 0.03290000185370445,
+      "direction_corr": -0.7631
+    }
+  ],
+  "groups": {
+    "basic": {
+      "total_mean_abs_shap": 0.5235999822616577,
+      "share": 0.7228999733924866,
+      "n_features": 36
+    },
+    "ppl": {
+      "total_mean_abs_shap": 0.0812000036239624,
+      "share": 0.1120000034570694,
+      "n_features": 1
+    },
+    "labse": {
+      "total_mean_abs_shap": 0.07800000160932541,
+      "share": 0.10769999772310257,
+      "n_features": 1
+    },
+    "ne": {
+      "total_mean_abs_shap": 0.04149999842047691,
+      "share": 0.05730000138282776,
+      "n_features": 22
+    }
+  },
+  "most_negative_for_failures": [
+    {
+      "feature": "mt_latin_word_frac",
+      "gap": -0.058400001376867294
+    },
+    {
+      "feature": "word_diff",
+      "gap": -0.05490000173449516
+    },
+    {
+      "feature": "char_ratio",
+      "gap": -0.0494999997317791
+    },
+    {
+      "feature": "mt_latin_frac",
+      "gap": -0.03280000016093254
+    },
+    {
+      "feature": "mt_devanagari_frac",
+      "gap": -0.03280000016093254
+    },
+    {
+      "feature": "word_ratio",
+      "gap": -0.030500000342726707
+    },
+    {
+      "feature": "labse_cos",
+      "gap": -0.02879999950528145
+    },
+    {
+      "feature": "mt_nll",
+      "gap": -0.028300000354647636
+    }
+  ]
+}

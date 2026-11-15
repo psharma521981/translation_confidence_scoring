@@ -1,0 +1,21 @@
+split,original,translation,z_mean,pred,src_words,mt_latin_words,src_entities,src_num_count,all_numbers_match
+val,Legs and trunk are lost.,पैर और धड़ टूट जाते हैं।,-0.9012119966318306,0.4972609626438141,5,0,0,0,1
+test,An anklet is shown on the ankle of the leg.,पैर के टखने पर एक टखना दिखाया गया है।,-0.5868493854966165,0.42195022168670654,10,0,0,0,1
+test,I will select Articles.,मैं लेख चुनूंगा।,-0.7400678915643341,0.3976789140296936,4,0,1,0,1
+val,He has also stood in some Women's International matches.,वह कुछ महिला अंतर्राष्ट्रीय मैचों में भी खड़े रहे हैं।,-0.9965789682662389,0.36659847418666835,9,0,1,0,1
+val,Also consume natural ﬂuids like Coconut water and milk.,नारियल पानी और दूध जैसे प्राकृतिक चूर्ण का भी सेवन करें।,-1.0826585089474574,0.3350250854364395,9,0,1,0,1
+test,Till time we have covered four modules.,जब तक हमने चार मॉड्यूल को कवर किया है।,-1.2323289737363292,0.3347313705231476,7,0,0,0,1
+val,We were destined to destroy each other.,हम एक-दूसरे को तबाह करने वाले थे।,-1.8766079414112373,0.33205920770339964,7,0,0,0,1
+test,Sajid-Wajid composed the music for his debut album.,साजिद-वाजिद ने अपने पहले एल्बम के लिए संगीत तैयार किया।,-1.058919315422506,0.29527582696933746,8,0,0,0,1
+test,The following is the competition schedule for all events.,निम्नलिखित सभी घटनाओं के लिए प्रतियोगिता कार्यक्रम है।,-0.5970560278734579,0.26267159980196,9,0,0,0,1
+test,There were 35 events contested in 6 sports (10 disciplines).,6 खेलों (10 विषयों) में 35 स्पर्धाएं आयोजित की गईं।,-1.1082229886988333,0.25834036894779205,10,0,0,3,1
+val,This hall has a luxuriant interior with large chandeliers.,इस हॉल में बड़े-बड़े झूमखानों के साथ एक शानदार इंटीरियर है।,-0.7082690088602016,0.2518431395292282,9,0,0,0,1
+val,Nanded district is a district of Maharashtra state in central India.,नांदेड़ ज़िला भारत के महाराष्ट्र राज्य का एक ज़िला है।,-1.4142790604425013,0.2492939517740631,11,0,2,0,1
+val,Legibility research has been published since the late nineteenth century.,विशुद्धता अनुसंधान उन्नीसवीं शताब्दी के उत्तरार्ध से प्रकाशित हुआ है।,-1.8474391637192165,0.24484875688850405,10,0,0,0,1
+test,It is also known as Chavundaraya Basadi.,इसे चौंदराय बसदी के नाम से भी जाना जाता है।,-0.735942876031618,0.23894106873016357,7,0,1,0,1
+val,"A prominent feature of the museum is the magnificent German stained glass rose window, on the north side of the temple.",संग्रहालय की एक प्रमुख विशेषता मंदिर के उत्तर में भव्य जर्मन रंगीन कांच की गुलाब की खिड़की है।,-1.3350439409558592,0.23320211345127106,21,0,1,0,1
+val,"As a punishment, the teacher made her stand facing the class for the entire period.","सजा के रूप में, शिक्षिका ने पूरी अवधि के लिए कक्षा का सामना किया।",-2.3373522497311807,0.20615201334058764,15,0,0,0,1
+test,Abetment to suicide was inexplicably not included.,आत्महत्या के लिए उकसाने को शामिल नहीं किया गया।,-1.312477885196507,0.18659848860460282,7,0,0,0,1
+test,"Soon afterward, the family made a sea voyage and was hit by a tempest.","इसके तुरंत बाद, परिवार ने समुद्र यात्रा की और एक तूफ़ान से प्रभावित हुआ।",-1.0298071718887563,0.18531543605241774,14,0,0,0,1
+val,It was everything I thought Bohemia probably was.,मैं बोहेमिया के बारे में ही सोच रहा था।,-3.6742929574008305,0.18103789741270065,8,0,1,0,1
+val,A barrel can technically be used to specify any volume.,किसी भी आयतन को निर्दिष्ट करने के लिए एक बैरल का तकनीकी रूप से उपयोग किया जा सकता है।,-0.9897792058142089,0.166847363739357,10,0,0,0,1
